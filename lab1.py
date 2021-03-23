@@ -11,21 +11,21 @@ import random
 import sys
 
 def memorama():
-    print(matrix2)
+    print(len(matrix2))
     imprimir()
     print('Jugador 1')
     
     x = int(input('Ingresa un valor en la horizontal: '))
-    if x > len(matrix[0]):
+    if x >= len(matrix[0]):
         print('ERROR')
         memorama()
 
     y = int(input('Ingresa un valor en la vertical: '))
-    if y > len(matrix):
+    if y >= len(matrix):
         print('ERROR')
         memorama()
-    print(x,y,matrix,matrix2)
-    matrix[x][y] = matrix2[x][y]
+    print(x,y,matrix[y][x],matrix2[y][x])
+    matrix[y][x] = matrix2[y][x]
 
     imprimir()
 #---------------------------------------------------------------------------|
@@ -34,19 +34,19 @@ def memorama():
         x2 = int(input('Ingresa un valor en la horizontal: '))
         y2 = int(input('Ingresa un valor en la vertical: '))
         if (x2,y2) != (x,y):
-            if x2 > len(matrix[0]):
+            if x2 >= len(matrix[0]):
                 print('ERROR')
-                matrix[x][y] = '-'
-            if y2 > len(matrix):
+                matrix[y][x] = '-'
+            if y2 >= len(matrix):
                 print('ERROR')
-                matrix[x][y] = '-'
+                matrix[y][x] = '-'
             break
         else:
             print("aweonao qlo te crei muy chistoso maricon hazlo bien")
 #---------------------------------------------------------------------------|
         
 
-    matrix[x2][y2] = matrix2[x2][y2]
+    matrix[y2][x2] = matrix2[y2][x2]
 
     
     imprimir()
@@ -58,16 +58,16 @@ def memorama2():
     print('Jugador 2')
 
     x = int(input('Ingresa un valor en la horizontal: '))
-    if x > len(matrix[0]):
+    if x >= len(matrix[0]):
         print('ERROR')
         memorama2()
 
     y = int(input('Ingresa un valor en la vertical: '))
-    if y > len(matrix):
+    if y >= len(matrix):
         print('ERROR')
         memorama2()
 
-    matrix[x][y] = matrix2[x][y]
+    matrix[y][x] = matrix2[y][x]
 
     imprimir()
 #--------------------------------------------------------------------------|
@@ -76,17 +76,17 @@ def memorama2():
         x2 = int(input('Ingresa un valor en la horizontal: '))
         y2 = int(input('Ingresa un valor en la vertical: '))
         if (x2,y2) != (x,y):
-            if x2 > len(matrix[0]):
+            if x2 >= len(matrix[0]):
                 print('ERROR')
-                matrix[x][y] = '-'
-            if y2 > len(matrix):
+                matrix[y][x] = '-'
+            if y2 >= len(matrix):
                 print('ERROR')
-                matrix[x][y] = '-'
+                matrix[y][x] = '-'
             break
         else:
             print("aweonao qlo te crei muy chistoso maricon hazlo bien")
 #---------------------------------------------------------------------------|
-    matrix[x2][y2] = matrix2[x2][y2]
+    matrix[y2][x2] = matrix2[y2][x2]
 
     imprimir()
     
@@ -94,9 +94,9 @@ def memorama2():
 
 def condiciones(x,y,x2,y2):
     global p1
-    if matrix[x][y] != matrix[x2][y2]:
-        matrix[x2][y2] = "-"
-        matrix[x][y] = "-"
+    if matrix[y][x] != matrix[y2][x2]:
+        matrix[y2][x2] = "-"
+        matrix[y][x] = "-"
         respuesta = str(input('¿Quiere seguir jugando? s/n: '))
         if respuesta == 's':
             memorama2()
@@ -120,9 +120,9 @@ def condiciones(x,y,x2,y2):
 
 def condiciones2(x,y,x2,y2):
     global p2
-    if matrix[x][y] != matrix[x2][y2]:
-        matrix[x2][y2] = "-"
-        matrix[x][y] = "-"
+    if matrix[y][x] != matrix[y2][x2]:
+        matrix[y2][x2] = "-"
+        matrix[y][x] = "-"
         respuesta = str(input('¿Quiere seguir jugando? s/n: '))
         if respuesta == 's':
             memorama()
