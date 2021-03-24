@@ -209,6 +209,6 @@ for i in range(cant_cartas):
 lista=lista*2
 
 matrix=[lista[0:int(len(lista)/2)],lista[int(len(lista)/2):int(len(lista))]]
-
 print(lista,matrix2,matrix)
+
 main()
