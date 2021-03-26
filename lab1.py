@@ -26,7 +26,7 @@ def memorama():
     elif matrix[y][x] == " ":
         print("this coordinate has already been revealed, try another position")
         memorama()
-    print(x,y,matrix[y][x],matrix2[y][x])
+
     matrix[y][x] = matrix2[y][x]
 
     screen()
@@ -53,7 +53,6 @@ def memorama():
     matrix[y2][x2] = matrix2[y2][x2]
     screen()
     turn=0
-    print(matrix)
     condition(x,y,x2,y2,turn)
 
 def memorama2():
@@ -98,7 +97,6 @@ def memorama2():
     
     screen()
     turn=1
-    print(matrix)
     condition(x,y,x2,y2,turn)
 
 def condition(x,y,x2,y2,turn):
